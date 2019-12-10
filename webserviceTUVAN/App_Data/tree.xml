@@ -1,0 +1,145 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="tbtree" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="tbtree">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="ID" type="xs:int" minOccurs="0" />
+                <xs:element name="SoThich" type="xs:string" minOccurs="0" />
+                <xs:element name="GioiTinh" type="xs:string" minOccurs="0" />
+                <xs:element name="Tuoi" type="xs:string" minOccurs="0" />
+                <xs:element name="Thunhap" type="xs:string" minOccurs="0" />
+                <xs:element name="TinhHieuQua" type="xs:string" minOccurs="0" />
+                <xs:element name="Parent_ID" type="xs:string" minOccurs="0" />
+                <xs:element name="MaSP" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <tbtree>
+    <ID>1</ID>
+    <Parent_ID>0</Parent_ID>
+    <MaSP />
+  </tbtree>
+  <tbtree>
+    <ID>2</ID>
+    <Thunhap>Cao</Thunhap>
+    <Parent_ID>1</Parent_ID>
+    <MaSP>2</MaSP>
+  </tbtree>
+  <tbtree>
+    <ID>3</ID>
+    <GioiTinh>Nam</GioiTinh>
+    <Parent_ID>2</Parent_ID>
+    <MaSP>5</MaSP>
+  </tbtree>
+  <tbtree>
+    <ID>4</ID>
+    <SoThich>Chụp ảnh và quay video</SoThich>
+    <TinhHieuQua>Có</TinhHieuQua>
+    <Parent_ID>3</Parent_ID>
+    <MaSP>31</MaSP>
+  </tbtree>
+  <tbtree>
+    <ID>5</ID>
+    <GioiTinh>Nữ</GioiTinh>
+    <Parent_ID>2</Parent_ID>
+    <MaSP>2</MaSP>
+  </tbtree>
+  <tbtree>
+    <ID>6</ID>
+    <SoThich>Chơi game</SoThich>
+    <TinhHieuQua>Không</TinhHieuQua>
+    <Parent_ID>5</Parent_ID>
+    <MaSP>7</MaSP>
+  </tbtree>
+  <tbtree>
+    <ID>7</ID>
+    <SoThich>Chụp ảnh và quay video</SoThich>
+    <TinhHieuQua>Có</TinhHieuQua>
+    <Parent_ID>5</Parent_ID>
+    <MaSP>32</MaSP>
+  </tbtree>
+  <tbtree>
+    <ID>8</ID>
+    <Thunhap>Thấp</Thunhap>
+    <Parent_ID>1</Parent_ID>
+    <MaSP>3</MaSP>
+  </tbtree>
+  <tbtree>
+    <ID>9</ID>
+    <GioiTinh>Nam</GioiTinh>
+    <Parent_ID>8</Parent_ID>
+    <MaSP>4</MaSP>
+  </tbtree>
+  <tbtree>
+    <ID>10</ID>
+    <SoThich>Lướt web</SoThich>
+    <Parent_ID>9</Parent_ID>
+    <MaSP>4</MaSP>
+  </tbtree>
+  <tbtree>
+    <ID>11</ID>
+    <Tuoi>Trẻ</Tuoi>
+    <TinhHieuQua>Có</TinhHieuQua>
+    <Parent_ID>10</Parent_ID>
+    <MaSP>33</MaSP>
+  </tbtree>
+  <tbtree>
+    <ID>12</ID>
+    <GioiTinh>Nữ</GioiTinh>
+    <TinhHieuQua>Có</TinhHieuQua>
+    <Parent_ID>8</Parent_ID>
+    <MaSP>3</MaSP>
+  </tbtree>
+  <tbtree>
+    <ID>13</ID>
+    <Thunhap>Trung bình</Thunhap>
+    <Parent_ID>1</Parent_ID>
+    <MaSP>1</MaSP>
+  </tbtree>
+  <tbtree>
+    <ID>14</ID>
+    <GioiTinh>Nam</GioiTinh>
+    <Parent_ID>13</Parent_ID>
+    <MaSP>1</MaSP>
+  </tbtree>
+  <tbtree>
+    <ID>15</ID>
+    <SoThich>Chơi game</SoThich>
+    <TinhHieuQua>Có</TinhHieuQua>
+    <Parent_ID>14</Parent_ID>
+    <MaSP>17</MaSP>
+  </tbtree>
+  <tbtree>
+    <ID>16</ID>
+    <SoThich>Chụp ảnh và quay video</SoThich>
+    <Parent_ID>14</Parent_ID>
+    <MaSP>1</MaSP>
+  </tbtree>
+  <tbtree>
+    <ID>17</ID>
+    <GioiTinh>Nữ</GioiTinh>
+    <Parent_ID>13</Parent_ID>
+    <MaSP>6</MaSP>
+  </tbtree>
+  <tbtree>
+    <ID>18</ID>
+    <SoThich>Chơi game</SoThich>
+    <TinhHieuQua>Không</TinhHieuQua>
+    <Parent_ID>17</Parent_ID>
+    <MaSP>13</MaSP>
+  </tbtree>
+  <tbtree>
+    <ID>19</ID>
+    <SoThich>Chụp ảnh và quay video</SoThich>
+    <Parent_ID>17</Parent_ID>
+    <MaSP>6</MaSP>
+  </tbtree>
+</NewDataSet>

@@ -1,0 +1,676 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6370E85B-F7FD-484F-AF09-8586CED27369}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PhoneShop</RootNamespace>
+    <AssemblyName>PhoneShop</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CollectionPager, Version=0.0.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\CollectionPager.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Syn.Bot, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syn.Bot.1.1.1\lib\portable-net45+sl5+wp8+win8\Syn.Bot.dll</HintPath>
+    </Reference>
+    <Reference Include="Syn.Chat, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syn.Chat.1.0.3\lib\net45\Syn.Chat.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ChiTiet1.aspx" />
+    <Content Include="ChiTietSanPham1.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="GoiYSanPham.aspx" />
+    <Content Include="HtmlPage2.html" />
+    <Content Include="images\1.png" />
+    <Content Include="images\AnhDT\Apple\iPhone11Pro\iPhone11Pro_Bac.jpg" />
+    <Content Include="images\AnhDT\Apple\iPhone11Pro\iPhone11Pro_Vang.jpg" />
+    <Content Include="images\AnhDT\Apple\iPhone11Pro\iPhone11Pro_Xam.jpg" />
+    <Content Include="images\AnhDT\Apple\iPhone11Pro\iPhone11Pro_XanhReu.jpg" />
+    <Content Include="images\AnhDT\Apple\iPhone11\iPhone11_Den.jpg" />
+    <Content Include="images\AnhDT\Apple\iPhone11\iPhone11_Do.jpg" />
+    <Content Include="images\AnhDT\Apple\iPhone11\iPhone11_Tim.jpg" />
+    <Content Include="images\AnhDT\Apple\iPhone11\iPhone11_Trang.jpg" />
+    <Content Include="images\AnhDT\Apple\iPhone11\iPhone11_Vang.jpg" />
+    <Content Include="images\AnhDT\Apple\iPhone11\iPhone11_XanhLuc.jpg" />
+    <Content Include="images\AnhDT\Apple\iPhone7P\iPhone7PBac.jpg" />
+    <Content Include="images\AnhDT\Apple\iPhone7P\iPhone7PDenNham.jpg" />
+    <Content Include="images\AnhDT\Apple\iPhone7P\iPhone7+_Do.jpg" />
+    <Content Include="images\AnhDT\Apple\iPhone7P\iPhone7+_Hong.jpg" />
+    <Content Include="images\AnhDT\Apple\iPhone7P\iPhone7+_Vang.png" />
+    <Content Include="images\AnhDT\Apple\iPhone7\iPhone7_Bac.jpg" />
+    <Content Include="images\AnhDT\Apple\iPhone7\iPhone7_Den.jpg" />
+    <Content Include="images\AnhDT\Apple\iPhone7\iPhone7_Do.jpg" />
+    <Content Include="images\AnhDT\Apple\iPhone7\iPhone7_Hong.jpg" />
+    <Content Include="images\AnhDT\Apple\iPhone7\iPhone7_Vang.jpg" />
+    <Content Include="images\AnhDT\Apple\iPhone8P\iPhone8+_Bac.jpg" />
+    <Content Include="images\AnhDT\Apple\iPhone8P\iPhone8+_Den.jpg" />
+    <Content Include="images\AnhDT\Apple\iPhone8P\iPhone8+_Do.png" />
+    <Content Include="images\AnhDT\Apple\iPhone8P\iPhone8PVang.jpg" />
+    <Content Include="images\AnhDT\Apple\iPhone8\iPhone8_Bac.jpg" />
+    <Content Include="images\AnhDT\Apple\iPhone8\iPhone8_Den.jpg" />
+    <Content Include="images\AnhDT\Apple\iPhone8\iPhone8_Do.jpg" />
+    <Content Include="images\AnhDT\Apple\iPhone8\iPhone8_Vang.jpg" />
+    <Content Include="images\AnhDT\Apple\iPhoneXS\iPhoneXS_Bac.jpg" />
+    <Content Include="images\AnhDT\Apple\iPhoneXS\iPhoneXS_Den.jpg" />
+    <Content Include="images\AnhDT\Apple\iPhoneXS\iPhoneXS_Vang.jpg" />
+    <Content Include="images\AnhDT\Apple\iPhoneX\iPhoneX_Bac.jpg" />
+    <Content Include="images\AnhDT\Apple\iPhoneX\iPhoneX_Den.jpg" />
+    <Content Include="images\AnhDT\Asus\ROG\ROG.jpg" />
+    <Content Include="images\AnhDT\Asus\ZenfoneMaxM2\ZenfoneMaxM2_Den.jpg" />
+    <Content Include="images\AnhDT\Asus\ZenfoneMaxM2\ZenfoneMaxM2_Xanh.jpg" />
+    <Content Include="images\AnhDT\Huawei\P30Pro\P30Pro_Den.jpg" />
+    <Content Include="images\AnhDT\Huawei\P30Pro\P30Pro_Trang.jpg" />
+    <Content Include="images\AnhDT\Huawei\P30Pro\P30Pro_Xanh.jpg" />
+    <Content Include="images\AnhDT\Huawei\P30Pro\P30Pro_XanhThanhThien.jpg" />
+    <Content Include="images\AnhDT\Huawei\Y7Pro\Y7Pro_Den.jpg" />
+    <Content Include="images\AnhDT\Huawei\Y7Pro\Y7Pro_Xanh.jpg" />
+    <Content Include="images\AnhDT\Oppo\OppoF9_xanh.jpg" />
+    <Content Include="images\AnhDT\Oppo\oppoNeo9s_Vang.jpg" />
+    <Content Include="images\AnhDT\Realme\realme2_den.jpg" />
+    <Content Include="images\AnhDT\Realme\realme3Pro_den.jpg" />
+    <Content Include="images\AnhDT\SamSung\GalaxyA70\galaxyA70_trang.jpg" />
+    <Content Include="images\AnhDT\SamSung\GalaxyNote10P\GalaxyNote10+_Bac.jpg" />
+    <Content Include="images\AnhDT\SamSung\GalaxyNote10P\GalaxyNote10+_Den.jpg" />
+    <Content Include="images\AnhDT\SamSung\GalaxyNote10P\GalaxyNote10PTrang.jpg" />
+    <Content Include="images\AnhDT\SamSung\GalaxyNote10\GalaxyNote10_Bac.jpg" />
+    <Content Include="images\AnhDT\SamSung\GalaxyNote10\GalaxyNote10_Den.jpg" />
+    <Content Include="images\AnhDT\SamSung\GalaxyNote10\GalaxyNote10_Hong.jpg" />
+    <Content Include="images\AnhDT\SamSung\GalaxyNote8\GalaxyNote8_Den.jpg" />
+    <Content Include="images\AnhDT\SamSung\GalaxyNote8\GalaxyNote8_Tim.jpg" />
+    <Content Include="images\AnhDT\SamSung\GalaxyNote8\GalaxyNote8_Vang.jpg" />
+    <Content Include="images\AnhDT\SamSung\GalaxyNote9\GalaxyNote9_Den.jpg" />
+    <Content Include="images\AnhDT\SamSung\GalaxyNote9\GalaxyNote9_Vang.jpg" />
+    <Content Include="images\AnhDT\SamSung\GalaxyNote9\GalaxyNote9_Xanh.jpg" />
+    <Content Include="images\AnhDT\SamSung\GalaxyS10P\GalaxyS10+_Den.jpg" />
+    <Content Include="images\AnhDT\SamSung\GalaxyS10P\GalaxyS10PTrang.jpg" />
+    <Content Include="images\AnhDT\SamSung\GalaxyS10P\GalaxyS10+_Xanh.jpg" />
+    <Content Include="images\AnhDT\SamSung\GalaxyS10\GalaxyS10_Den.jpg" />
+    <Content Include="images\AnhDT\SamSung\GalaxyS10\GalaxyS10_Trang.jpg" />
+    <Content Include="images\AnhDT\SamSung\GalaxyS10\GalaxyS10_Xanh.jpg" />
+    <Content Include="images\AnhDT\SamSung\GalaxyS9P\GalaxyS9+_Den.jpg" />
+    <Content Include="images\AnhDT\SamSung\GalaxyS9P\GalaxyS9+_Tim.jpg" />
+    <Content Include="images\AnhDT\SamSung\GalaxyS9P\GalaxyS9PVang.jpg" />
+    <Content Include="images\AnhDT\SamSung\GalaxyS9P\GalaxyS9+_Xanh.jpg" />
+    <Content Include="images\AnhDT\Xiaomi\Mi9\Mi9_Tim.jpg" />
+    <Content Include="images\AnhDT\Xiaomi\Mi9\Mi9_Xam.jpg" />
+    <Content Include="images\AnhDT\Xiaomi\Mi9\Mi9_Xanh.jpg" />
+    <Content Include="images\AnhDT\Xiaomi\RedmiNote8Pro\RedmiNote8Pro_Den.jpg" />
+    <Content Include="images\AnhDT\Xiaomi\RedmiNote8Pro\RedmiNote8Pro_Trang.jpg" />
+    <Content Include="images\AnhDT\Xiaomi\RedmiNote8Pro\RedmiNote8Pro_Xanh.jpg" />
+    <Content Include="images\AnhDT\Xiaomi\RedmiNote8\RedmiNote8_Den.jpg" />
+    <Content Include="images\AnhDT\Xiaomi\RedmiNote8\RedmiNote8_Trang.jpg" />
+    <Content Include="images\AnhDT\Xiaomi\RedmiNote8\RedmiNote8_Xanh.jpg" />
+    <Content Include="images\dribbble.png" />
+    <Content Include="KetQuaTim.aspx" />
+    <Content Include="ManagementShop\HomePageAdmin.aspx" />
+    <Content Include="ManagementShop\Mangement_Style\css\bootstrap-theme.css" />
+    <Content Include="ManagementShop\Mangement_Style\css\bootstrap.min.css" />
+    <Content Include="ManagementShop\Mangement_Style\css\elegant-icons-style.css" />
+    <Content Include="ManagementShop\Mangement_Style\css\font-awesome.min.css" />
+    <Content Include="ManagementShop\Mangement_Style\css\sidebar.css" />
+    <Content Include="ManagementShop\Mangement_Style\css\simple-sidebar.css" />
+    <Content Include="ManagementShop\Mangement_Style\css\style-responsive.css" />
+    <Content Include="ManagementShop\Mangement_Style\css\style.css" />
+    <Content Include="ManagementShop\Mangement_Style\js\bootstrap.min.js" />
+    <Content Include="ManagementShop\Mangement_Style\js\jquery.js" />
+    <Content Include="ManagementShop\Mangement_Style\js\jquery.nicescroll.js" />
+    <Content Include="ManagementShop\Mangement_Style\js\jquery.scrollTo.min.js" />
+    <Content Include="ManagementShop\Mangement_Style\js\scripts.js" />
+    <Content Include="ManagementShop\PhanQuyen.aspx" />
+    <Content Include="ManagementShop\QLyTKhoan.aspx" />
+    <Content Include="ManagementShop\SuaTaikhoan.aspx" />
+    <Content Include="ManagementShop\Vidu.aspx" />
+    <Content Include="Staffs\css\style_menu.css" />
+    <Content Include="Staffs\Home.aspx" />
+    <Content Include="Staffs\QLDanhMuc.aspx" />
+    <Content Include="Staffs\QLSanPham.aspx" />
+    <Content Include="Staffs\QLyHoaDon.aspx" />
+    <Content Include="Staffs\QuanLyThongTinKhachHang.aspx" />
+    <Content Include="Staffs\SuaSanPham.aspx" />
+    <Content Include="Staffs\ThemDanhMuc.aspx" />
+    <Content Include="Staffs\ThemSanPhamMoi.aspx" />
+    <Content Include="UserStyle\css\LoginStyle\login_js.js" />
+    <Content Include="UserStyle\css\LoginStyle\style.css" />
+    <Content Include="UserStyle\css\slides.css" />
+    <Content Include="UserStyle\css\style3.css" />
+    <Content Include="UserStyle\css\styleMaster.css" />
+    <Content Include="WebForm1.aspx" />
+    <Content Include="WebForm2.aspx" />
+    <Content Include="WebForm3.aspx" />
+    <None Include="Connected Services\ServiceReference1\Service.disco" />
+    <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiceReference1\configuration.svcinfo" />
+    <None Include="Connected Services\ServiceReference1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="DangKy.aspx" />
+    <Content Include="DangNhap.aspx" />
+    <Content Include="DangXuat.aspx" />
+    <Content Include="DanhSach1.aspx" />
+    <Content Include="DanhSachMatHang.aspx" />
+    <Content Include="DatHang.aspx" />
+    <Content Include="DatHangThanhCong.aspx" />
+    <Content Include="GioHang.aspx" />
+    <Content Include="GioHang1.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Home.aspx" />
+    <Content Include="HtmlPage1.html" />
+    <Content Include="images\AnhDT\Apple\iPhone8\apple-iphone-8-plus-256gb-silver.jpg" />
+    <Content Include="images\arrow-down.png" />
+    <Content Include="images\arrow_up.png" />
+    <Content Include="images\avatar.png" />
+    <Content Include="images\drop_arrow.png" />
+    <Content Include="images\icon\Account-512.png" />
+    <Content Include="images\icon\facebook.png" />
+    <Content Include="images\icon\linkedin.png" />
+    <Content Include="images\icon\skype.png" />
+    <Content Include="images\icon\twitter.png" />
+    <Content Include="images\images.png" />
+    <Content Include="images\iphone-x-64gb-21-600x600.jpg" />
+    <Content Include="images\ipxs_2VajLhM.jpg" />
+    <Content Include="images\list-img.png" />
+    <Content Include="images\logo5.gif" />
+    <Content Include="images\op-lung-samsung-galaxy-m20-nillkin-nature-11-250x250.jpg" />
+    <Content Include="images\AnhDT\Oppo\oppo-f11-pro-mobile-phone-250x250.jpg" />
+    <Content Include="images\original-new-samsung-galaxy-s10-plus-8gb-ram-128gb-smartphone-250x250.jpg" />
+    <Content Include="images\search.png" />
+    <Content Include="images\xiaomi-mi-9-4g-64gb-dual-sim-blue.jpg" />
+    <Content Include="images\slide_quangcao_iphonex.jpg" />
+    <Content Include="Login.aspx" />
+    <Content Include="ManagementShop\Mangement_Style\bootstrap\css\bootstrap.min.css" />
+    <Content Include="ManagementShop\Mangement_Style\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="ManagementShop\Mangement_Style\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="ManagementShop\Mangement_Style\bootstrap\js\bootstrap.js" />
+    <Content Include="ManagementShop\Mangement_Style\bootstrap\js\bootstrap.min.js" />
+    <Content Include="ManagementShop\Mangement_Style\css_table\style.css" />
+    <Content Include="ManagementShop\Mangement_Style\jquery\jquery.js" />
+    <Content Include="ManagementShop\Mangement_Style\jquery\jquery.min.js" />
+    <Content Include="ManagementShop\Mangement_Style\jquery\jquery.slim.js" />
+    <Content Include="ManagementShop\Mangement_Style\jquery\jquery.slim.min.js" />
+    <Content Include="ManagementShop\Mangement_Style\js\jquery.min.1.8.3.js" />
+    <Content Include="ManagementShop\Mangement_Style\css\jquery.treeview.css" />
+    <Content Include="ManagementShop\Mangement_Style\js\jquery.2.1.4.js" />
+    <Content Include="ManagementShop\QuanLyTaiKhoan.aspx" />
+    <Content Include="MenuDanhMuc.ascx" />
+    <Content Include="QuanLyThongTin.aspx" />
+    <Content Include="Staffs\css\menu.css" />
+    <Content Include="ThongTinKhachHang.aspx" />
+    <Content Include="UserStyle\chat\css\chat.css" />
+    <Content Include="UserStyle\chat\js\index.js" />
+    <Content Include="UserStyle\css\cart_style.css" />
+    <Content Include="UserStyle\css\chatbot.css" />
+    <Content Include="UserStyle\css\easy-responsive-tabs.css" />
+    <Content Include="UserStyle\css\global.css" />
+    <Content Include="UserStyle\css\home_style.css" />
+    <Content Include="UserStyle\css\loginstyle.css" />
+    <Content Include="UserStyle\css\LoginStyle\bootstrap.min.css" />
+    <Content Include="UserStyle\css\LoginStyle\dangnhap.css" />
+    <Content Include="UserStyle\css\LoginStyle\font-awesome.css" />
+    <Content Include="UserStyle\css\LoginStyle\jquery.1.11.3.js" />
+    <Content Include="UserStyle\css\LoginStyle\login.css" />
+    <Content Include="UserStyle\css\slider.css" />
+    <Content Include="UserStyle\css\stylecart.css" />
+    <Content Include="UserStyle\css\styleofhome.css" />
+    <Content Include="UserStyle\js\easing.js" />
+    <Content Include="UserStyle\js\easyResponsiveTabs.js" />
+    <Content Include="UserStyle\js\jquery.accordion.js" />
+    <Content Include="UserStyle\js\jquery.easing.js" />
+    <Content Include="UserStyle\js\LoginJS\bootstrap.bundle.min.js" />
+    <Content Include="UserStyle\js\LoginJS\bootstrap.min.js" />
+    <Content Include="UserStyle\js\LoginJS\jquery-1.9.1.min.js" />
+    <Content Include="UserStyle\js\LoginJS\jquery.easing.min.js" />
+    <Content Include="UserStyle\js\LoginJS\jquery.min.js" />
+    <Content Include="UserStyle\js\LoginJS\sb-admin-2.min.js" />
+    <Content Include="UserStyle\js\move-top.js" />
+    <Content Include="UserStyle\js\script.js" />
+    <Content Include="UserStyle\js\slides.min.jquery.js" />
+    <Content Include="UserStyle\js\startstop-slider.js" />
+    <Content Include="UserStyle\table.css" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Code\COMMON.cs" />
+    <Compile Include="App_Code\MaHoaMD5.cs" />
+    <Compile Include="ChiTiet1.aspx.cs">
+      <DependentUpon>ChiTiet1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChiTiet1.aspx.designer.cs">
+      <DependentUpon>ChiTiet1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChiTietMaster.Master.cs">
+      <DependentUpon>ChiTietMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChiTietMaster.Master.designer.cs">
+      <DependentUpon>ChiTietMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ChiTietSanPham1.aspx.cs">
+      <DependentUpon>ChiTietSanPham1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChiTietSanPham1.aspx.designer.cs">
+      <DependentUpon>ChiTietSanPham1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServiceReference1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="DangKy.aspx.cs">
+      <DependentUpon>DangKy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DangKy.aspx.designer.cs">
+      <DependentUpon>DangKy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DangNhap.aspx.cs">
+      <DependentUpon>DangNhap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DangNhap.aspx.designer.cs">
+      <DependentUpon>DangNhap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DangXuat.aspx.cs">
+      <DependentUpon>DangXuat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DangXuat.aspx.designer.cs">
+      <DependentUpon>DangXuat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DanhSach1.aspx.cs">
+      <DependentUpon>DanhSach1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DanhSach1.aspx.designer.cs">
+      <DependentUpon>DanhSach1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DanhSachMatHang.aspx.cs">
+      <DependentUpon>DanhSachMatHang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DanhSachMatHang.aspx.designer.cs">
+      <DependentUpon>DanhSachMatHang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DatHang.aspx.cs">
+      <DependentUpon>DatHang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DatHang.aspx.designer.cs">
+      <DependentUpon>DatHang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DatHangThanhCong.aspx.cs">
+      <DependentUpon>DatHangThanhCong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DatHangThanhCong.aspx.designer.cs">
+      <DependentUpon>DatHangThanhCong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GioHang.aspx.cs">
+      <DependentUpon>GioHang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GioHang.aspx.designer.cs">
+      <DependentUpon>GioHang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GioHang1.aspx.cs">
+      <DependentUpon>GioHang1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GioHang1.aspx.designer.cs">
+      <DependentUpon>GioHang1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="GoiYSanPham.aspx.cs">
+      <DependentUpon>GoiYSanPham.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GoiYSanPham.aspx.designer.cs">
+      <DependentUpon>GoiYSanPham.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KetQuaTim.aspx.cs">
+      <DependentUpon>KetQuaTim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KetQuaTim.aspx.designer.cs">
+      <DependentUpon>KetQuaTim.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManagementShop\AdminArea.Master.cs">
+      <DependentUpon>AdminArea.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManagementShop\AdminArea.Master.designer.cs">
+      <DependentUpon>AdminArea.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ManagementShop\ConnectionDB.cs" />
+    <Compile Include="ManagementShop\HomePageAdmin.aspx.cs">
+      <DependentUpon>HomePageAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManagementShop\HomePageAdmin.aspx.designer.cs">
+      <DependentUpon>HomePageAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManagementShop\PhanQuyen.aspx.cs">
+      <DependentUpon>PhanQuyen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManagementShop\PhanQuyen.aspx.designer.cs">
+      <DependentUpon>PhanQuyen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManagementShop\QLyTKhoan.aspx.cs">
+      <DependentUpon>QLyTKhoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManagementShop\QLyTKhoan.aspx.designer.cs">
+      <DependentUpon>QLyTKhoan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManagementShop\QuanLyTaiKhoan.aspx.cs">
+      <DependentUpon>QuanLyTaiKhoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManagementShop\QuanLyTaiKhoan.aspx.designer.cs">
+      <DependentUpon>QuanLyTaiKhoan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManagementShop\SuaTaikhoan.aspx.cs">
+      <DependentUpon>SuaTaikhoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManagementShop\SuaTaikhoan.aspx.designer.cs">
+      <DependentUpon>SuaTaikhoan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManagementShop\TreeViewBL.cs" />
+    <Compile Include="ManagementShop\Vidu.aspx.cs">
+      <DependentUpon>Vidu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManagementShop\Vidu.aspx.designer.cs">
+      <DependentUpon>Vidu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage_User.Master.cs">
+      <DependentUpon>MasterPage_User.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage_User.Master.designer.cs">
+      <DependentUpon>MasterPage_User.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MenuDanhMuc.ascx.cs">
+      <DependentUpon>MenuDanhMuc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenuDanhMuc.ascx.designer.cs">
+      <DependentUpon>MenuDanhMuc.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuanLyThongTin.aspx.cs">
+      <DependentUpon>QuanLyThongTin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuanLyThongTin.aspx.designer.cs">
+      <DependentUpon>QuanLyThongTin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staffs\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staffs\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staffs\QLDanhMuc.aspx.cs">
+      <DependentUpon>QLDanhMuc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staffs\QLDanhMuc.aspx.designer.cs">
+      <DependentUpon>QLDanhMuc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staffs\QLSanPham.aspx.cs">
+      <DependentUpon>QLSanPham.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staffs\QLSanPham.aspx.designer.cs">
+      <DependentUpon>QLSanPham.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staffs\QLyHoaDon.aspx.cs">
+      <DependentUpon>QLyHoaDon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staffs\QLyHoaDon.aspx.designer.cs">
+      <DependentUpon>QLyHoaDon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staffs\QuanLyThongTinKhachHang.aspx.cs">
+      <DependentUpon>QuanLyThongTinKhachHang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staffs\QuanLyThongTinKhachHang.aspx.designer.cs">
+      <DependentUpon>QuanLyThongTinKhachHang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staffs\StaffManagement.Master.cs">
+      <DependentUpon>StaffManagement.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staffs\StaffManagement.Master.designer.cs">
+      <DependentUpon>StaffManagement.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Staffs\SuaSanPham.aspx.cs">
+      <DependentUpon>SuaSanPham.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staffs\SuaSanPham.aspx.designer.cs">
+      <DependentUpon>SuaSanPham.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staffs\ThemDanhMuc.aspx.cs">
+      <DependentUpon>ThemDanhMuc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staffs\ThemDanhMuc.aspx.designer.cs">
+      <DependentUpon>ThemDanhMuc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staffs\ThemSanPhamMoi.aspx.cs">
+      <DependentUpon>ThemSanPhamMoi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staffs\ThemSanPhamMoi.aspx.designer.cs">
+      <DependentUpon>ThemSanPhamMoi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ThongTinKhachHang.aspx.cs">
+      <DependentUpon>ThongTinKhachHang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThongTinKhachHang.aspx.designer.cs">
+      <DependentUpon>ThongTinKhachHang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm3.aspx.cs">
+      <DependentUpon>WebForm3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm3.aspx.designer.cs">
+      <DependentUpon>WebForm3.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MasterPage_User.Master" />
+    <Content Include="ChiTietMaster.Master" />
+    <None Include="Connected Services\ServiceReference1\Service.wsdl" />
+    <None Include="Connected Services\ServiceReference1\Service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference1\Service4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="ManagementShop\AdminArea.Master" />
+    <None Include="packages.config" />
+    <Content Include="Staffs\StaffManagement.Master" />
+    <Content Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <Content Include="Properties\DataSources\System.Data.DataTable.datasource" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Area\image\" />
+    <Folder Include="Area\Manager\" />
+    <Folder Include="Area\Style\css\" />
+    <Folder Include="Area\Style\font\" />
+    <Folder Include="Area\Style\js\" />
+    <Folder Include="ManagementShop\Mangement_Style\js_table\" />
+    <Folder Include="Models\" />
+    <Folder Include="NewFolder1\" />
+    <Folder Include="Staffs\images_item\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62407</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:62407/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

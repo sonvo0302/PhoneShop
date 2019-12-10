@@ -1,0 +1,20 @@
+﻿body {
+    width: 400px;
+    height: 300px;
+    border: 3px solid black;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h4 {
+    text-align: center;
+}
+
+td {
+    padding: 10px;
+}
+
+tr {
+    align-content: center;
+}

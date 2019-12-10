@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.852
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneShop", "PhoneShop\PhoneShop.csproj", "{6370E85B-F7FD-484F-AF09-8586CED27369}"
+	ProjectSection(ProjectDependencies) = postProject
+		{815806F0-CA26-4D01-8A96-4AFF8A90EF29} = {815806F0-CA26-4D01-8A96-4AFF8A90EF29}
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "webserviceTUVAN", "webserviceTUVAN\", "{815806F0-CA26-4D01-8A96-4AFF8A90EF29}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_62677"
+		Debug.AspNetCompiler.PhysicalPath = "webserviceTUVAN\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_62677\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_62677"
+		Release.AspNetCompiler.PhysicalPath = "webserviceTUVAN\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_62677\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "62677"
+		SlnRelativePath = "webserviceTUVAN\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6370E85B-F7FD-484F-AF09-8586CED27369}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6370E85B-F7FD-484F-AF09-8586CED27369}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6370E85B-F7FD-484F-AF09-8586CED27369}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6370E85B-F7FD-484F-AF09-8586CED27369}.Release|Any CPU.Build.0 = Release|Any CPU
+		{815806F0-CA26-4D01-8A96-4AFF8A90EF29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{815806F0-CA26-4D01-8A96-4AFF8A90EF29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{815806F0-CA26-4D01-8A96-4AFF8A90EF29}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{815806F0-CA26-4D01-8A96-4AFF8A90EF29}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C768042C-1988-4894-8BA9-7B05A87F344D}
+	EndGlobalSection
+EndGlobal

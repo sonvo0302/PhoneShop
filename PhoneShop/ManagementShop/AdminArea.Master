@@ -1,0 +1,141 @@
+﻿ <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminArea.master.cs" Inherits="PhoneShop.ManagementShop.AdminArea" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+      <title>Khu vực Admin</title>
+
+  <!-- Bootstrap core CSS -->
+<link href="../UserStyle/css/LoginStyle/style.css" rel="stylesheet" />
+
+    <link href="Mangement_Style/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Custom styles for this template -->
+<link href="Mangement_Style/css/sidebar.css" rel="stylesheet" />
+<%--    <link href="Mangement_Style/css/simple-sidebar.css" rel="stylesheet" />--%>
+</head>
+<body>
+    <form id="form1" runat="server">
+      
+        <div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading" style="font-size: 20px;height: 7.8%;text-align: center;color: red;">Admin</div>
+      <div class="list-group list-group-flush">
+            
+<%--         <a href="PhanQuyen.aspx" class="list-group-item list-group-item-action bg-light list-group-item-success">Phân quyền</a>
+        <a href="QuanLyTaiKhoan.aspx" class="list-group-item list-group-item-action bg-light">Quản lý tài khoản</a>--%>
+           <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+            
+                
+            </asp:ContentPlaceHolder>
+        
+      </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <button class="btn btn-primary" id="menu-toggle">&laquo;</button>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+              <li class="nav-item active">
+            <asp:LinkButton CssClass="nav-link" runat="server" Text="Trang chủ" OnClick="btn_trangchusp_Click" ID="btn_trangchusp"/>
+                  </li>
+           <li class="nav-item"><a class="nav-link button" id="dangnhap" runat="server"></a></li>
+            
+              <li class="nav-item"><a class="nav-link button" runat="server" href="~/DangXuat.aspx">Đăng xuất</a></li>
+            <%--<li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>--%>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="container-fluid">
+             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+      </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+
+  <!-- Bootstrap core JavaScript -->
+        <script src="Mangement_Style/jquery/jquery.min.js"></script>
+        <script src="Mangement_Style/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+<%--         <div id="modalOne" class="modal">
+        <div class="modal-content" style="width:30%">
+            <div class="contact-form">
+                <span class="close">&times;</span>
+               
+                    <h2 style="text-align:center">Thành viên</h2>
+                    <div>
+                        <input   type="text" id="user_name"  placeholder="Username" runat="server"/>
+                        <input  type="password" id="password_c" placeholder="Password" runat="server"/>
+                    </div>
+                    <asp:Button ID="btn_dangnhap" CssClass="button1 btn btn-primary btn-lg btn-block login-btn" OnClick="btn_dangnhap_Click" runat="server" Text="Đăng nhập" />
+
+           
+            </div>
+        </div>
+    </div>
+    
+
+
+         <script>
+            var modalBtns = [...document.querySelectorAll(".button")];
+            modalBtns.forEach(function (btn) {
+                btn.onclick = function () {
+                    var modal = btn.getAttribute('data-modal');
+                    document.getElementById(modal).style.display = "block";
+                }
+            });
+
+            var closeBtns = [...document.querySelectorAll(".close")];
+            closeBtns.forEach(function (btn) {
+                btn.onclick = function () {
+                    var modal = btn.closest('.modal');
+                    modal.style.display = "none";
+                }
+            });
+
+            window.onclick = function (event) {
+                if (event.target.className === "modal") {
+                    event.target.style.display = "none";
+                }
+            }
+        </script>--%>
+
+  <!-- Menu Toggle Script -->
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+  </script>
+    </form>
+</body>
+</html>

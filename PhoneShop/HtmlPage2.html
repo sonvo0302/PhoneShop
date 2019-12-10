@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Title of the document</title>
+
+    <link href="UserStyle/css/LoginStyle/style.css" rel="stylesheet" />
+</head>
+<body>
+    <h2>Multiple Popup Forms</h2>
+    <p>
+        <button class="button" data-modal="modalOne">Contact Us</button>
+    </p>
+    <p>
+        <button class="button" data-modal="modalTwo">Send a Compliant Form</button>
+    </p>
+    <div id="modalOne" class="modal">
+        <div class="modal-content">
+            <div class="contact-form">
+                <a class="close">&times;</a>
+                <form action="/">
+                    <h2>Contact Us</h2>
+                    <div>
+                        <input class="fname" type="text" name="name" placeholder="Full name">
+                        <input type="text" name="name" placeholder="Email">
+                        <input type="text" name="name" placeholder="Phone number">
+                        <input type="text" name="name" placeholder="Website">
+                    </div>
+                    <span>Message</span>
+                    <div>
+                        <textarea rows="4"></textarea>
+                    </div>
+                    <button type="submit" href="/">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalTwo" class="modal">
+        <div class="modal-content">
+            <div class="contact-form">
+                <span class="close">&times;</span>
+                <form action="/">
+                    <h2>Complaint form</h2>
+                    <div>
+                        <input class="fname" type="text" name="name" placeholder="Full name">
+                        <input type="text" name="name" placeholder="Email">
+                        <input type="text" name="name" placeholder="Phone number">
+                        <input type="text" name="name" placeholder="Website">
+                    </div>
+                    <span>Message</span>
+                    <div>
+                        <textarea rows="4"></textarea>
+                    </div>
+                    <button type="submit" href="/">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+      var modalBtns = [...document.querySelectorAll(".button")];
+      modalBtns.forEach(function(btn){
+        btn.onclick = function() {
+          var modal = btn.getAttribute('data-modal');
+          document.getElementById(modal).style.display = "block";
+        }
+      });
+
+      var closeBtns = [...document.querySelectorAll(".close")];
+      closeBtns.forEach(function(btn){
+        btn.onclick = function() {
+          var modal = btn.closest('.modal');
+          modal.style.display = "none";
+        }
+      });
+
+      window.onclick = function(event) {
+        if (event.target.className === "modal") {
+          event.target.style.display = "none";
+        }
+      }
+    </script>
+</body>
+</html>
