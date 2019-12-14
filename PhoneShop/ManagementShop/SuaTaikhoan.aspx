@@ -35,7 +35,7 @@
             </div>
             <asp:Button runat="server" CssClass="btn btn-primary" ID="btn_back" OnClick="btn_back_Click" Text="Quay về" />
             &nbsp;&nbsp;&nbsp;
-  <asp:Button runat="server" CssClass="btn btn-primary btn-danger" ID="btn_save" CommandArgument='<%#Eval("User_ID") %>' OnClick="btn_save_Click" Text="Lưu" />
+  <asp:Button runat="server" CssClass="btn btn-primary btn-danger" ID="btn_save" OnClick="btn_save_Click" Text="Lưu" />
         </section>
     </div>
 </asp:Content>

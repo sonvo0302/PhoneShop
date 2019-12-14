@@ -23,36 +23,46 @@ namespace PhoneShop
                 string script = "alert(\"Bạn chưa đăng nhập!\");";
                 ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
             }
-            string userName = Request.Cookies["UserName"].Value;
-            string Password = Request.Cookies["Password"].Value;
-            string sql = "Select * from View_2 where UserName='" + userName + "'and Password='" + Password + "'";
-            DataTable dt = new DataTable();
-            dt = cm.getTable(sql);
-            if (dt.Rows.Count > 0)
+            else
             {
-                string array = "";
-
-                array = dt.Rows[0]["TenSoThich"].ToString() + "," + dt.Rows[0]["TenGioiTinh"].ToString() + "," + dt.Rows[0]["Tuoi"].ToString() + "," + dt.Rows[0]["LoaiThuNhap"].ToString();
-
-                string danhsachmasp = ws.getConsultingResults(array);
-                DataTable tb1 = ws.getTableTree();
-
-                if (danhsachmasp == "")
+                string userName = Request.Cookies["UserName"].Value;
+                string Password = Request.Cookies["Password"].Value;
+                string sql = "Select * from View_2 where UserName='" + userName + "'and Password='" + Password + "'";
+                DataTable dt = new DataTable();
+                dt = cm.getTable(sql);
+                if (dt.Rows.Count > 0)
                 {
-                    string script = "alert(\"Không có sản phẩm phù hợp với thông tin của bạn!\");";
-                    ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
+                    string array = "";
+
+                    array = dt.Rows[0]["TenSoThich"].ToString() + "," + dt.Rows[0]["TenGioiTinh"].ToString() + "," + dt.Rows[0]["Tuoi"].ToString() + "," + dt.Rows[0]["LoaiThuNhap"].ToString();
+
+                    string danhsachmasp = ws.getConsultingResults(array); /*duyệt kết quả in mã sản phẩm theo array*/
+                    DataTable tb1 = ws.getTableTree();/*duyệt xong lấy cây*/
+
+                    if (danhsachmasp == "")
+                    {
+                        string script = "alert(\"Không có sản phẩm phù hợp với thông tin của bạn!\");";
+                        ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
+                        Server.Transfer("GoiYSanPham.aspx");
+                        Label2.Text = "Không có sản phẩm nào phù hợp với thông tin của bạn";
+                    }
+                    else
+                    {
+                        string data = "Select * from view_giohang where SanPham_ID in (" + danhsachmasp.Substring(0, danhsachmasp.Length - 1) + ")";
+                        string data_user = "Select * from view_khachhang where UserName='" + userName + "' and Password='" + Password + "'";
+                        dataGoiY.DataSource = cm.getTable(data);
+                        dataGoiY.DataBind();
+                        DataList1.DataSource = cm.getTable(data_user);
+                        DataList1.DataBind();
+                    }
                 }
                 else
                 {
-                    string data = "Select * from view_giohang where SanPham_ID in (" + danhsachmasp.Substring(0, danhsachmasp.Length - 1) + ")";
-                    dataGoiY.DataSource = cm.getTable(data);
-                    dataGoiY.DataBind();
+                    string script = "alert(\"Bạn phải nhập vào thông tin bản thân.Kích chuột vào welcome!\");";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
+                    Label2.Text = "Không có sản phẩm nào phù hợp với thông tin của bạn";
+                    
                 }
-            }
-            else
-            {
-                string script = "alert(\"Bạn phải nhập vào thông tin bản thân.Kích chuột vào welcome!\");";
-                ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
             }
             
         }

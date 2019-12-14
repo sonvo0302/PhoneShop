@@ -9,16 +9,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <link href="UserStyle/css/styleMaster.css" rel="stylesheet" />
     <%--<link href="UserStyle/css/styleofhome.css" rel="stylesheet" />--%>
-     <link href="UserStyle/css/LoginStyle/style.css" rel="stylesheet" />
+    <link href="UserStyle/css/LoginStyle/style.css" rel="stylesheet" />
     <link href="UserStyle/css/cart_style.css" rel="stylesheet" />
-   <%-- <link href="UserStyle/table.css" rel="stylesheet" />--%>
-    <link href="UserStyle/chat/css/chat.css" rel="stylesheet" />
     <link href="UserStyle/css/slides.css" rel="stylesheet" />
-       <link href="UserStyle/css/LoginStyle/bootstrap.min.css" rel="stylesheet" />
+    <link href="UserStyle/css/LoginStyle/bootstrap.min.css" rel="stylesheet" />
     <script src="UserStyle/js/jquery-1.7.2.min.js"></script>
     <script src="UserStyle/js/move-top.js"></script>
     <script src="UserStyle/js/easing.js"></script>
-    <script src="UserStyle/chat/js/index.js"></script>
+    <%--   <script src="UserStyle/chat/js/index.js"></script>--%>
+    <link href="UserStyle/chat/css/bot_style.css" rel="stylesheet" />
+    <script src="UserStyle/chat/js/jquery-3.2.1.min.js"></script>
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -76,7 +76,7 @@
                     </div>
                     <div class="cart">
                         <p>
-                           Chào mừng đến với Phone Shop! <span><a href="GioHang.aspx"><i class="glyphicon glyphicon-shopping-cart"></i></a></span>
+                            Chào mừng đến với Phone Shop! <span><a href="GioHang.aspx"><i class="glyphicon glyphicon-shopping-cart"></i></a></span>
                         </p>
                     </div>
 
@@ -97,7 +97,7 @@
                     </div>
                     <div class="search_box">
                         <asp:TextBox ID="txt_search" CssClass="input_search" runat="server"></asp:TextBox>
-                        <asp:Button ID="btn_timkiem" CssClass="btn_search" OnClick="btn_timkiem_Click" runat="server"/>
+                        <asp:Button ID="btn_timkiem" CssClass="btn_search" OnClick="btn_timkiem_Click" runat="server" />
                     </div>
                     <div class="clear"></div>
                 </div>
@@ -236,74 +236,115 @@
                 </div>
                 <div class="chat-input">
                     <fieldset>
-                        <input type="text" id="chat-input" placeholder="Send a message..." />
-                        <button type="submit" class="chat-submit" id="chat-submit"><i class="	glyphicon glyphicon-send"></i></button>
+                        <input type="text" id="chat_input" placeholder="Send a message..." runat="server"/>
+                        <button type="submit" class="chat-submit" id="chat_submit" runat="server"><i class="glyphicon glyphicon-send"></i></button>
                     </fieldset>
                 </div>
             </div>
 
         </div>
-                <div id="modalOne" class="modal">
-        <div class="modal-content">
-            <div class="contact-form">
-                <span class="close">&times;</span>
-               
-                    <h2 style="text-align:center">Thành viên</h2>
+        <div id="modalOne" class="modal">
+            <div class="modal-content">
+                <div class="contact-form">
+                    <span class="close">&times;</span>
+
+                    <h2 style="text-align: center">Thành viên</h2>
                     <div>
-                        <input   type="text" id="user_name"  placeholder="Username" runat="server"/>
-                        <input  type="password" id="password" placeholder="Password" runat="server"/>
+                        <input type="text" id="user_name" placeholder="Username" runat="server" />
+                        <input type="password" id="password" placeholder="Password" runat="server" />
                     </div>
                     <asp:Button ID="btn_dangnhap" CssClass=" btn btn-primary btn-lg btn-block login-btn" OnClick="btn_dangnhap_Click" runat="server" Text="Đăng nhập" />
 
-           
+
+                </div>
             </div>
         </div>
-    </div>
-     <div id="modalTwo" class="modal">
-        <div class="modal-content">
-            <div class="contact-form">
-                <span class="close">&times;</span>
-              
-                    <h2 style="text-align:center">Register</h2>
+        <div id="modalTwo" class="modal">
+            <div class="modal-content">
+                <div class="contact-form">
+                    <span class="close">&times;</span>
+
+                    <h2 style="text-align: center">Register</h2>
                     <div>
-                        <input  id="hoten" type="text"  placeholder="Full Name" runat="server"/>
-                        <input id="username" type="text"  placeholder="Username" runat="server"/>
-                        <input  id="password1" type="password" placeholder="Password" runat="server"/>
-                        <input id="password2" type="password"  placeholder="Repeat password" runat="server"/>
+                        <input id="hoten" type="text" placeholder="Full Name" runat="server" />
+                        <input id="username" type="text" placeholder="Username" runat="server" />
+                        <input id="password1" type="password" placeholder="Password" runat="server" />
+                        <input id="password2" type="password" placeholder="Repeat password" runat="server" />
                     </div>
-                <div><span><input id="day" type="text" placeholder="Input day of birthday" runat="server"/></span>/<span ><input id="month" type="text"   placeholder="Input month of birthday" runat="server" /></span>/<span><input id="year" type="text"  placeholder="Input year of birthday" runat="server"/></span></div>
-    
-                <asp:Button ID="btn_dangky" CssClass=" btn btn-primary btn-lg btn-block login-btn" runat="server" Text="Đăng ký" OnClick="btn_dangky_Click" />
+                    <div>
+                        <span>
+                            <input id="day" type="text" placeholder="Input day of birthday" runat="server" /></span>/<span><input id="month" type="text" placeholder="Input month of birthday" runat="server" /></span>/<span><input id="year" type="text" placeholder="Input year of birthday" runat="server" /></span>
+                    </div>
 
-          
+                    <asp:Button ID="btn_dangky" CssClass=" btn btn-primary btn-lg btn-block login-btn" runat="server" Text="Đăng ký" OnClick="btn_dangky_Click" />
+
+
+                </div>
             </div>
         </div>
-    </div>
+
+        <script type="text/javascript"> 
+
+            function clickButton(e, buttonid) {
+                var evt = e ? e : window.event;
+                var bt = document.getElementById(buttonid);
+
+                if (bt) {
+                    if (evt.keyCode == 13) {
+                        bt.click();
+                        return false;
+                    }
+                }
+            }
+        </script>
+
+
+        <script type="text/javascript">
+            function doClick(buttonName, e) {
+                //the purpose of this function is to allow the enter key to 
+                //point to the correct button to click.
+                var key;
+
+                if (window.event)
+                    key = window.event.keyCode;     //IE
+                else
+                    key = e.which;     //firefox
+
+                if (key == 13) {
+                    //Get the button the user wants to have clicked
+                    var btn = document.getElementById(buttonName);
+                    if (btn != null) { //If we find the button click it
+                        btn.click();
+                        event.keyCode = 0
+                    }
+                }
+            }
+        </script>
 
 
 
-    <script>
-      var modalBtns = [...document.querySelectorAll(".button")];
-      modalBtns.forEach(function(btn){
-        btn.onclick = function() {
-          var modal = btn.getAttribute('data-modal');
-          document.getElementById(modal).style.display = "block";
-        }
-      });
+        <script>
+            var modalBtns = [...document.querySelectorAll(".button")];
+            modalBtns.forEach(function (btn) {
+                btn.onclick = function () {
+                    var modal = btn.getAttribute('data-modal');
+                    document.getElementById(modal).style.display = "block";
+                }
+            });
 
-      var closeBtns = [...document.querySelectorAll(".close")];
-      closeBtns.forEach(function(btn){
-        btn.onclick = function() {
-          var modal = btn.closest('.modal');
-          modal.style.display = "none";
-        }
-      });
+            var closeBtns = [...document.querySelectorAll(".close")];
+            closeBtns.forEach(function (btn) {
+                btn.onclick = function () {
+                    var modal = btn.closest('.modal');
+                    modal.style.display = "none";
+                }
+            });
 
-      window.onclick = function(event) {
-        if (event.target.className === "modal") {
-          event.target.style.display = "none";
-        }
-      }
+            window.onclick = function (event) {
+                if (event.target.className === "modal") {
+                    event.target.style.display = "none";
+                }
+            }
     </script>
 
         <script type="text/javascript">
@@ -313,7 +354,90 @@
             });
         </script>
         <a href="#" id="toTop"><span id="toTopHover"></span></a>
-        
+
+
+        <!--Chat bot-->
+        <script type="text/javascript">
+            $(function () {
+                var INDEX = 0;
+                $("#chat_submit").click(function (e) {
+                    e.preventDefault();
+                    var msg = $("#chat_input").val();
+                    if (msg.trim() == '') {
+                        return false;
+
+                    }
+                    generate_message(msg, 'user');
+                     setTimeout(function () {
+                        generate_message(msg, 'self');
+                    }, 1000)
+
+
+                })
+
+                function generate_message(msg, type) {
+                 
+                    INDEX++;
+                    var str = "";
+                    str += "<div id='cm-msg-" + INDEX + "'  class=\"chat-msg" + type + "\">";
+                  
+                    str += "          <div class=\"cm-msg-text\" style=\"background: #0ff;color:white; padding: 10px 15px 10px 15px;float:right;border-radius:50%;\"> ";
+                    str += msg;
+                    str += "          <\/div>";
+                    str += "        <\/div>";
+                   
+                    $("#cm-msg-" + INDEX).hide().fadeIn(300);
+                    if (type != 'self') {
+                        $("#chat_input").val('');
+                        $(".chat-logs").append(str);
+                        
+                    }
+                    $(".chat-logs").stop().animate({ scrollTop: $(".chat-logs")[0].scrollHeight }, 1000);
+                        $.ajax({
+                        url: 'http://localhost:8080/getResponse',
+                        data: {
+                            request: msg,
+                        },
+                        success: function (data) {
+                            INDEX++;
+                            var str1 = "";
+                            str1 += "<div id='cm-msg-" + INDEX + "' style=\"float:right;width:100%\" class=\"chat-msg" + type + "\">";
+                        
+                            str1 += "          <div class=\"cm-msg-text\" style=\"background:white;\" >";
+                            str1 += data;
+                            str1 += "          <\/div>";
+                            str1 += "        <\/div>";
+                           
+                            $("#cm-msg-" + INDEX).hide().fadeIn(300);
+                            if (type == 'self') {
+                                $(".chat-logs").append(str1);
+                               $("#chat_input").val('');
+                            }
+                            $(".chat-logs").stop().animate({ scrollTop: $(".chat-logs")[0].scrollHeight }, 1000);
+                        }
+
+                    });
+                   
+
+
+
+                }
+
+
+
+
+                $("#chat-circle").click(function () {
+                    $("#chat-circle").toggle('scale');
+                    $(".chat-box").toggle('scale');
+                })
+
+                $(".chat-box-toggle").click(function () {
+                    $("#chat-circle").toggle('scale');
+                    $(".chat-box").toggle('scale');
+                })
+
+            })
+        </script>
     </form>
 </body>
 </html>

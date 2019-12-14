@@ -22,7 +22,19 @@ namespace PhoneShop
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                user_name.Attributes.Add("onkeypress", "return clickButton(event,'" + btn_dangnhap.ClientID + "')");          
+                password.Attributes.Add("onkeypress", "return clickButton(event,'" + btn_dangnhap.ClientID + "')");
+                username.Attributes.Add("onkeypress", "return clickButton(event,'" + btn_dangky.ClientID + "')");
+                password1.Attributes.Add("onkeypress", "return clickButton(event,'" + btn_dangky.ClientID + "')");
+                password2.Attributes.Add("onkeypress", "return clickButton(event,'" + btn_dangky.ClientID + "')");
+                day.Attributes.Add("onkeypress", "return clickButton(event,'" + btn_dangky.ClientID + "')");
+                month.Attributes.Add("onkeypress", "return clickButton(event,'" + btn_dangky.ClientID + "')");
+                year.Attributes.Add("onkeypress", "return clickButton(event,'" + btn_dangky.ClientID + "')");
+                txt_search.Attributes.Add("onkeypress", "return clickButton(event,'" + btn_timkiem.ClientID + "')");
+                chat_input.Attributes.Add("onkeypress", "return clickButton(event,'" + chat_submit.ClientID + "')");
+            }
             SqlParameter[] pr = { new SqlParameter("@MaDM", DBNull.Value) };
 
             tbDANHMUC = cm.getTableStoreprocedure("getCategory", pr);
@@ -154,7 +166,7 @@ namespace PhoneShop
 
                 if (group_id == 1)
                 {
-                    Response.Redirect("DanhSachMatHang.aspx");
+                    Response.Redirect("Default.aspx");
                 }
                 else if (group_id == 2)
                 {
@@ -171,6 +183,7 @@ namespace PhoneShop
             {
                 string script = "alert(\"Lỗi đăng nhập!\");";
                 ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
+                
             }
         }
 

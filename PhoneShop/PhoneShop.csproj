@@ -192,6 +192,8 @@
     <Content Include="Staffs\SuaSanPham.aspx" />
     <Content Include="Staffs\ThemDanhMuc.aspx" />
     <Content Include="Staffs\ThemSanPhamMoi.aspx" />
+    <Content Include="UserStyle\chat\css\bot_style.css" />
+    <Content Include="UserStyle\chat\js\jquery-3.2.1.min.js" />
     <Content Include="UserStyle\css\LoginStyle\login_js.js" />
     <Content Include="UserStyle\css\LoginStyle\style.css" />
     <Content Include="UserStyle\css\slides.css" />
@@ -297,6 +299,7 @@
   <ItemGroup>
     <Compile Include="App_Code\COMMON.cs" />
     <Compile Include="App_Code\MaHoaMD5.cs" />
+    <Compile Include="Checkout.cs" />
     <Compile Include="ChiTiet1.aspx.cs">
       <DependentUpon>ChiTiet1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

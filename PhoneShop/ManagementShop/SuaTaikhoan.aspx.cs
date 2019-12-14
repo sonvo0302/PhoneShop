@@ -18,8 +18,13 @@ namespace PhoneShop.ManagementShop
         protected void Page_Load(object sender, EventArgs e)
         {
             if (IsPostBack) return;
-            Load_group();
             user_id = Context.Items["userid"].ToString();
+            Load_group();
+            docDL();
+        }
+        void docDL()
+        {
+            
             string sql = "Select * from tbLOGIN where User_ID='" + user_id + "'";
             dt = cm.getTable(sql);
 
@@ -28,7 +33,7 @@ namespace PhoneShop.ManagementShop
                 Text1.Value = user_id;
                 user_name.Value = row["UserName"].ToString();
                 inputPassword.Value = MaHoaMD5.Decryptdata(row["Password"].ToString());
-                dropdown_group.SelectedItem.Value = row["Group_ID"].ToString();
+                
             }
         }
         private void Load_group()
@@ -41,11 +46,8 @@ namespace PhoneShop.ManagementShop
         }
         protected void btn_save_Click(object sender, EventArgs e)
         {
-
-            string password = MaHoaMD5.Encryptdata(inputPassword.Value.ToString());
-            
-            string sql = "Update tbLOGIN set Group_ID='" + dropdown_group.SelectedItem.Value.ToString() + "' where UserName='" + user_name.Value + "'";
-            cm.ExecuteNonQuery(sql);
+            string sql = "Update tbLOGIN set Group_ID='" + dropdown_group.SelectedValue.ToString() + "' where User_ID='" +Text1.Value.ToString()+ "'";
+                cm.ExecuteNonQuery(sql);
             Server.Transfer("QuanLyTaiKhoan.aspx");
         }
 

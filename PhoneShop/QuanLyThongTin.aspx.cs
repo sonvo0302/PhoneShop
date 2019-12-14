@@ -18,8 +18,6 @@ namespace PhoneShop
         protected void Page_Load(object sender, EventArgs e)
         {
             if (IsPostBack) return;
-
-
             load_Sothich();
             load_GioiTinh();
             load_thunhap();

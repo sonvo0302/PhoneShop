@@ -39,7 +39,7 @@ namespace PhoneShop
             
             foreach (DataRow row in dt.Rows)
             {
-                tong= Convert.ToDouble(row["TongTien"].ToString());
+                tong+= Convert.ToDouble(row["ThanhTien"].ToString());
                 soluong = soluong + Convert.ToInt16(row["SoLuongDat"]); 
             }
             grdDonHang.DataSource = dt;
@@ -81,7 +81,7 @@ namespace PhoneShop
             double tong = 0; int soluong = 0;
             foreach (DataRow row in dt.Rows)
             {
-                tong = Convert.ToDouble(row["TongTien"].ToString());
+                tong += Convert.ToDouble(row["ThanhTien"].ToString());
                 soluong = soluong + Convert.ToInt16(row["SoLuongDat"]);
             }
             if (e.Row.RowType == DataControlRowType.Footer)

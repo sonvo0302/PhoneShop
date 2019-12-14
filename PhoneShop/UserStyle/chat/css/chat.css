@@ -226,3 +226,16 @@
     clear: both;
     margin-bottom: 70px;
 }
+
+
+
+.chat-msg {
+    clear: both;
+}
+
+    .chat-msg.self > .cm-msg-text {
+        float: right;
+        margin-right: 10px;
+        background: #5A5EB9;
+        color: white;
+    }

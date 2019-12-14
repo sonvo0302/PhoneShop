@@ -24,7 +24,7 @@ namespace PhoneShop.ManagementShop
         {
             string username = Request.Cookies["UserName"].Value;
             string password = Request.Cookies["Password"].Value;
-            string sql = "Select * from tbLOGIN where User_ID!=2";
+            string sql = "Select * from tbLOGIN where Group_ID!=2";
             DataList1.DataSource = cm.getTable(sql);
             DataList1.DataBind();
         }

@@ -7,14 +7,48 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <div class="content_top">
                         <div class="heading">
-                            <h3>Các sản phẩm gợi ý</h3>
+                            <h3>Thông tin của bạn</h3>
                         </div>
-                        <div class="see">
-    			            <p><a href="#">Tất cả sản phẩm</a></p>
-    		            </div>
                         <div class="clear"></div>
                     </div>
-    <asp:DataList ID="dataGoiY" runat="server" CssClass="table table-striped table-advance table-hover">
+
+    <asp:DataList ID="DataList1" runat="server" CssClass="table table-striped table-advance table-hover">
+        <HeaderTemplate>
+
+            <th><i></i>Sở thích</th>
+            <th><i></i>Thu nhập</th>
+            <th><i></i>Tuổi</th>
+            <th><i></i>Giới tính</th>
+             <th><i></i>Ngày sinh</th>
+             
+        </HeaderTemplate>
+        <ItemTemplate>
+
+            <td>
+                <asp:Label runat="server" Text='<%#Eval("TenSoThich") %>'></asp:Label></td>
+            <td>
+                <asp:Label runat="server" Text='<%#Eval("LoaiThuNhap") %>'></asp:Label></td>
+            <td>
+                <asp:Label runat="server" Text='<%#Eval("Tuoi") %>'></asp:Label></td>
+            <td>
+                <asp:Label runat="server" Text='<%#Eval("TenGioiTinh") %>'></asp:Label></td>
+            <td>
+                <asp:Label runat="server" Text='<%#Eval("NgaySinh") %>'></asp:Label></td>
+
+        </ItemTemplate>
+    </asp:DataList>
+
+
+    <div class="col-lg-12">
+                        <div class="heading">
+                            <h3>Mặt hàng phù hợp với bạn</h3>
+                        </div>
+         <div class="see">
+                             <p><a href="#">Tất cả mặt hàng</a></p>
+                        </div>
+                        <div class="clear"></div>
+          </div>          
+       <asp:DataList ID="dataGoiY" runat="server" CssClass="table table-striped table-advance table-hover">
         <HeaderTemplate>
 
             <th><i></i>Tên sản phẩm</th>
@@ -38,14 +72,15 @@
             <td>
                 <asp:Label runat="server" Text='<%#Eval("MoTa") %>'></asp:Label></td>
             <td>
-                <div class="btn-group">
+                <div class="btn-group">                    
                     <asp:LinkButton ID="btn_mua" runat="server" CommandArgument='<%#Eval("SanPham_ID") %>' CssClass="btn btn-success" OnClick="btn_mua_Click"><i class="glyphicon glyphicon-shopping-cart"></i></asp:LinkButton>              
                 </div>
             </td>
 
         </ItemTemplate>
     </asp:DataList>
-
-
+    <div class="float-lt">
+        <asp:Label ID="Label2" CssClass="label2" runat="server" Text=""></asp:Label>
+    </div>
 
 </asp:Content>

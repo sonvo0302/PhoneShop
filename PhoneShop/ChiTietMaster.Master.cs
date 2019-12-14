@@ -16,7 +16,17 @@ namespace PhoneShop
         public String strLogin;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (IsPostBack) return;
+            txt_search.Attributes.Add("onkeypress", "return clickButton(event,'" + btn_timkiem.ClientID + "')");
+            user_name.Attributes.Add("onkeypress", "return clickButton(event,'" + btn_dangnhap.ClientID + "')");
+            password_c.Attributes.Add("onkeypress", "return clickButton(event,'" + btn_dangnhap.ClientID + "')");
+            username.Attributes.Add("onkeypress", "return clickButton(event,'" + btn_dangky.ClientID + "')");
+            password1.Attributes.Add("onkeypress", "return clickButton(event,'" + btn_dangky.ClientID + "')");
+            password2.Attributes.Add("onkeypress", "return clickButton(event,'" + btn_dangky.ClientID + "')");
+            day.Attributes.Add("onkeypress", "return clickButton(event,'" + btn_dangky.ClientID + "')");
+            month.Attributes.Add("onkeypress", "return clickButton(event,'" + btn_dangky.ClientID + "')");
+            year.Attributes.Add("onkeypress", "return clickButton(event,'" + btn_dangky.ClientID + "')");
+            chat_input.Attributes.Add("onkeypress", "return clickButton(event,'" + chat_submit.ClientID + "')");
             if (Request.Cookies["UserName"] == null)
             {
                 strLogin += "<li><a data-modal='modalTwo' class='button'>Đăng ký</a></li> ";
@@ -67,7 +77,7 @@ namespace PhoneShop
                 if (group_id == 1)
                 {
                     
-                    Server.Transfer("DanhSachMatHang.aspx");
+                    Response.Redirect("Default.aspx");
                 }
                 else if (group_id == 2)
                 {
@@ -85,6 +95,7 @@ namespace PhoneShop
             {
                 string script = "alert(\"Lỗi đăng nhập!\");";
                 ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
+                Server.Transfer("Default.aspx");
             }
         }
 

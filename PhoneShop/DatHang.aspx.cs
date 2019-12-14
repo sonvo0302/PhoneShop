@@ -103,7 +103,15 @@ namespace PhoneShop
                     cs.ExecuteNonQuery(sql3);
                 }
             }
-            Session["tbGiohang"] = null;
+            //string return_url = "http://localhost:62407/Default.aspx";
+            //String transaction_info = txt_TenKhachHang.Text;
+            //String order_code = txt_ThoiGianDH.Text;
+            //String receiver = "webmaster@dotnet.vn";//Tài khoản nhận tiền 
+            //String price = tong.ToString();
+            //Checkout nl = new Checkout();
+            //String url;
+            //url = nl.buildCheckoutUrl(return_url, receiver, transaction_info, order_code, price);
+            //Response.Redirect(url);
             Response.Redirect("DatHangThanhCong.aspx");
         }
     }

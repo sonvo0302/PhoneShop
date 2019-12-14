@@ -67,6 +67,24 @@ namespace PhoneShop {
         protected global::System.Web.UI.HtmlControls.HtmlAnchor dangnhap;
         
         /// <summary>
+        /// chat_input control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText chat_input;
+        
+        /// <summary>
+        /// chat_submit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton chat_submit;
+        
+        /// <summary>
         /// user_name control.
         /// </summary>
         /// <remarks>

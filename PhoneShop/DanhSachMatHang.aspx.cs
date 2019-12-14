@@ -42,7 +42,16 @@ namespace PhoneShop
 
                     DataList1.DataSource = dt;
                     DataList1.DataBind();
-                    NapDuLieu(page, 20, 4, Int16.Parse(MADM));
+                    if (dt.Rows.Count > 0)
+                    {
+                        NapDuLieu(page, 20, 4, Int16.Parse(MADM));
+                    }
+                    else
+                    {
+                        string script = "alert(\"Mục này chưa có sản phẩm!\");";
+                        ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", script, true);
+                        return;
+                    }
 
                 }
 

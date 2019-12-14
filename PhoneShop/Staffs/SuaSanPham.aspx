@@ -9,7 +9,7 @@
     <div class="col-lg-12">
         <section class="panel">
             <header class="panel-heading" style="font-weight:bold">
-                Sửa tài khoản
+                Sửa sản phẩm
             </header>
             <div class="form-row">
                 <div class="form-group col-md-6">
